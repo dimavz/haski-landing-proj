@@ -1,11 +1,13 @@
 /**
  * Created by Дмитрий on 19.12.2017.
  */
-var gulp = require('gulp'),
-    sass = require('gulp-sass'),
-    concat = require('gulp-concat'),
-    autoprefixer = require('gulp-autoprefixer'),
-    browser = require('browser-sync');
+var gulp = require('gulp'), // Подключаем Gulp
+    sass = require('gulp-sass'), //Подключаем Sass пакет для генерации css файлов
+    concat = require('gulp-concat'), // Подключаем gulp-concat (для конкатенации файлов)
+    autoprefixer = require('gulp-autoprefixer'), // Подключаем библиотеку для автоматического добавления префиксов для разных браузеров
+    browser = require('browser-sync'), // Подключаем сервер для обновлений Browser Sync
+    cssnano = require('gulp-cssnano'), // Подключаем пакет для сжатия CSS файла
+    del = require('del'); // Подключаем библиотеку для удаления файлов и папок
 
 var config ={
     paths:{
