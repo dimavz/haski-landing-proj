@@ -15,7 +15,7 @@ var config ={
         js:'src/**/*.js'
     },
     output:{
-        nameFileCss:'main.css',
+        nameFileCss:'main.min.css',
         pathCss:'src/css'
     },
     srv_options:{
