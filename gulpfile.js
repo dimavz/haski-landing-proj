@@ -27,7 +27,7 @@ var config ={
         pathCssDist:'dist/css',
     },
     srv_options:{
-        basePath:'dist'
+        basePath:'src'
     }
 };
 gulp.task('browser', function(){
@@ -83,6 +83,6 @@ gulp.task('build',['clean','scss'], function () {
 
 });
 
-gulp.task('default',['watch', 'build']);
+gulp.task('default',['watch']);
 
 
