@@ -2,7 +2,10 @@
 @import "partitions/mixins";
 @import "partitions/media";
 
-
+#nav{
+  background-color: $white;
+  @include shadow_block;
+}
 
 
 
