@@ -11,17 +11,23 @@ var gulp = require('gulp'), // Подключаем Gulp
 
 var config ={
     paths:{
-        scss:'src/scss/**/*.scss',
+        src:'src',
         css:'src/css/**/*.css',
-        html:'src/**/*.html',
-        js:'src/**/*.js'
+        fonts:'src/fonts/**/*',
+        images:'src/images/**/*',
+        js:'src/js/**/*.js',
+        libs:'src/libs/**/*',
+        scss:'src/scss/**/*.scss',
+        html:'src/**/*.html'
     },
     output:{
         nameFileCss:'main.min.css',
-        pathCss:'src/css'
+        pathCss:'src/css',
+        pathDist: 'dist',
+        pathCssDist:'dist/css',
     },
     srv_options:{
-        basePath:'src'
+        basePath:'dist'
     }
 };
 gulp.task('browser', function(){
@@ -52,6 +58,31 @@ gulp.task('watch',['scss','browser'], function () {
     gulp.watch(config.paths.css,browser.reload);
 });
 
-gulp.task('default',['watch']);
+gulp.task('clean', function() {
+    return del.sync('dist'); // Удаляем папку dist перед сборкой
+});
+
+gulp.task('build',['clean','scss'], function () {
+    var buildCss = gulp.src(config.output.pathCss +"/"+ config.output.nameFileCss)// Переносим библиотеки в продакшен
+        .pipe(cssnano()) // Сжимаем
+        .pipe(gulp.dest(config.output.pathCssDist));
+
+    var buildCssFonts = gulp.src(config.output.pathCss +'/fonts.css') // Переносим стили шрифтов в продакшен
+        .pipe(gulp.dest(config.output.pathCssDist));
+
+    var buildFonts = gulp.src(config.paths.fonts) // Переносим шрифты в продакшен
+        .pipe(gulp.dest( config.output.pathDist+'/fonts'));
+    var buildImages = gulp.src(config.paths.images) // Переносим картинки в продакшен
+        .pipe(gulp.dest( config.output.pathDist+'/images'));
+    var buildJS = gulp.src(config.paths.js) // Переносим скрипты в продакшен
+        .pipe(gulp.dest( config.output.pathDist+'/js'));
+    var buildLibs = gulp.src(config.paths.libs) // Переносим скрипты в продакшен
+        .pipe(gulp.dest( config.output.pathDist+'/libs'));
+    var buildHtml = gulp.src(config.paths.html) // Переносим скрипты в продакшен
+        .pipe(gulp.dest( config.output.pathDist));
+
+});
+
+gulp.task('default',['watch', 'build']);
 
 
