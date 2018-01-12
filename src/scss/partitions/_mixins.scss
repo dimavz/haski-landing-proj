@@ -10,6 +10,14 @@
   list-style: none;
 }
 
+//Выравнивание
+@mixin flex-center{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 //Шрифты
 @mixin font-default{
   font-family: $font-family;
