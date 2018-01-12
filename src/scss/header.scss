@@ -2,3 +2,161 @@
 @import "partitions/mixins";
 @import "partitions/media";
 
+#header{
+  @include clear;
+
+  .wrap_promo{
+    position: relative;
+    margin-top: 54px;
+    margin-left: 0px;
+    img{
+      width: 100%;
+    }
+
+    .cover{
+      position: absolute;
+      top: 0px;
+      left: 150px;
+      width: 250px;
+      height: 330px;
+      opacity: .4;
+      background-color:$black;
+      border-radius: 5px;
+      z-index: 10;
+      @include shadow_block;
+    }
+
+    .promo{
+      position: absolute;
+      top: 0px;
+      left: 150px;
+      @include flex-center;
+      padding: 10px;
+      //background-color:$white;
+      width: 250px;
+      z-index: 20;
+
+      p{
+        color: $marine;
+        font-size: 1.5em;
+        text-transform: uppercase;
+        z-index: 100;
+
+        &.wt{
+          color: $white;
+        }
+        &.price{
+          color: $yellow;
+          text-transform: none;
+        }
+      }
+    }
+
+    .card_discount{
+      position: absolute;
+      bottom: 0;
+      right: 0px;
+      width: 400px;
+      img{
+        width: 100%;
+        height: 300px;
+      }
+
+      h3{
+        position: absolute;
+        top: 5px;
+        right: 10px;
+        color: $brown;
+        text-align: center;
+      }
+      span{
+        position: absolute;
+        top:95px;
+        left: 70px;
+        color: $white;
+        font-size: 24px;
+        text-transform: uppercase;
+        font-weight: bold;
+        @include shadow_text;
+
+        &.discount{
+          position: absolute;
+          top: 110px;
+          left: 60px;
+          font-size: 72px;
+          @include shadow_text;
+        }
+      }
+      .wrap_time{
+        position: absolute;
+        top: 210px;
+        left: 30px;
+        width: 340px;
+        height: 60px;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        background-color: $brown;
+        padding-left: 15px;
+        border-bottom-left-radius: 5px;
+        border-bottom-right-radius: 5px;
+        @include shadow_block;
+
+        .timeblock{
+          display: flex;
+          flex-direction: column;
+
+
+          span{
+            position: static;
+            color:$white;
+            font-size: 14px;
+            //text-transform: none;
+            text-shadow: none;
+            font-weight: normal;
+            @include shadow_text;
+
+          }
+          .time{
+            display: flex;
+            color: $white;
+            @include shadow_text;
+
+            div{
+              margin-right: 5px;
+            }
+          }
+        }
+        a{
+          color: $white;
+          //text-transform: uppercase;
+          text-decoration: none;
+          @include shadow_text;
+
+          &:hover{
+            color: $yellow;
+
+          }
+
+
+          &.button{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: $orange;
+            padding: 4px 7px;
+            height: 40px;
+            border-radius: 5px;
+            border: 2px solid $white;
+
+            &:hover{
+              @include shadow_block;
+            }
+          }
+        }
+
+      }
+    }
+  }
+
+}
