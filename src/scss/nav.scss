@@ -5,6 +5,83 @@
 #nav{
   background-color: $white;
   @include shadow_block;
+  position: fixed;
+  width: 100%;
+  //height: 50px;
+
+  .wrap_menu{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+
+    .logo_icon{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      img{
+        width: 54px;
+        height: 54px;
+      }
+    }
+
+    ul{
+      display: flex;
+      align-items: center;
+      margin-left: 20px;
+      li{
+        margin-right: 20px;
+        padding: 5px;
+        a{
+          text-decoration: none;
+          text-transform: uppercase;
+          color: $black;
+          font-size:18px;
+          font-family: RobotoRegular, sans-serif;
+        }
+
+        &:hover{
+          span{
+            background-color: $orange;
+          }
+          a{
+            color:$menu-link-color;
+          }
+        }
+        &.active{
+          a{
+            color: $menu-link-color;
+          }
+          span{
+            display: block;
+            height: 4px;
+            width: 100%;
+            background-color: $orange;
+            transition: all .5s;
+          }
+        }
+        span{
+          display: block;
+          @include shadow_block;
+          height: 4px;
+          width: 100%;
+        }
+      }
+    }
+    .phone{
+      display: flex;
+      align-items: center;
+      margin-left: auto;
+
+      i{
+        margin-right: 10px;
+        color: $menu-link-color;
+      }
+      span{
+        @include shadow_text;
+        font-size: 20px;
+      }
+    }
+  }
 }
 
 
