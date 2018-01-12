@@ -15,6 +15,7 @@
     align-items: center;
     justify-content: flex-start;
     flex-wrap: wrap;
+    padding-left: 10px;
 
     .logo_icon{
       display: flex;
@@ -44,7 +45,7 @@
 
         &:hover{
           span{
-            background-color: $orange;
+            background-color: $marine;
           }
           a{
             color:$menu-link-color;
@@ -58,7 +59,7 @@
             display: block;
             height: 4px;
             width: 100%;
-            background-color: $orange;
+            background-color: $marine;
             transition: all .5s;
           }
         }
