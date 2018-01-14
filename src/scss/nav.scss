@@ -35,6 +35,7 @@
       li{
         margin-right: 20px;
         padding: 5px;
+
         a{
           text-decoration: none;
           text-transform: uppercase;
@@ -45,21 +46,21 @@
 
         &:hover{
           span{
-            background-color: $marine;
+            background-color: $blue;
           }
           a{
-            color:$menu-link-color;
+            color:$blue;
           }
         }
         &.active{
           a{
-            color: $menu-link-color;
+            color: $blue;
           }
           span{
             display: block;
             height: 4px;
             width: 100%;
-            background-color: $marine;
+            background-color: $blue;
             transition: all .5s;
           }
         }
@@ -68,6 +69,7 @@
           @include shadow_block;
           height: 4px;
           width: 100%;
+          transition: all .5s;
         }
       }
     }
@@ -78,10 +80,12 @@
 
       i{
         margin-right: 10px;
-        color: $menu-link-color;
+        color: $blue;
+        @include shadow_text;
       }
       span{
         @include shadow_text;
+        color: $blue;
         font-size: 20px;
       }
     }

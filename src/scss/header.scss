@@ -68,11 +68,13 @@
         right: 10px;
         color: $brown;
         text-align: center;
+        @include shadow_text;
       }
       span{
         position: absolute;
-        top:95px;
-        left: 70px;
+        width: 100px;
+        top:85px;
+        left: 40px;
         color: $white;
         font-size: 24px;
         text-transform: uppercase;
@@ -81,12 +83,13 @@
 
         &.discount{
           position: absolute;
-          top: 110px;
-          left: 60px;
-          font-size: 72px;
+          top: 90px;
+          left: 150px;
+          font-size: 92px;
           @include shadow_text;
         }
       }
+
       .wrap_time{
         position: absolute;
         top: 210px;
@@ -103,30 +106,36 @@
         @include shadow_block;
 
         .timeblock{
-          display: flex;
-          flex-direction: column;
-
+          width: 210px;
 
           span{
             position: static;
             color:$white;
             font-size: 14px;
-            //text-transform: none;
             text-shadow: none;
             font-weight: normal;
             @include shadow_text;
 
-          }
-          .time{
-            display: flex;
-            color: $white;
-            @include shadow_text;
-
-            div{
-              margin-right: 5px;
+            /* Стили таймера обратного отсчёта*/
+            &.countdown-row{
+              @include clear;
+              display: flex;
+              justify-content: flex-start;
             }
+            &.countdown-section{
+              width: 70px;
+              @include clear;
+            }
+            &.countdown-period{
+              width: 70px;
+            }
+            &.countdown-amount{
+              font-size:24px;
+            }
+
           }
         }
+
         a{
           color: $white;
           //text-transform: uppercase;
