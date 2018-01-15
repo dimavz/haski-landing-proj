@@ -35,6 +35,9 @@ $(document).ready(function() {
 		});
 	});
 
+	//Карусель Bootstrap
+    $('.carousel').carousel('pause');
+
 	//Каруселька
 	//Документация: https://owlcarousel2.github.io/OwlCarousel2/
     var owl = $('.owl-carousel').owlCarousel({
