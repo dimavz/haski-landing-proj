@@ -54,9 +54,10 @@
 
     .card_discount{
       position: absolute;
-      bottom: 0;
-      right: 0px;
+      bottom: -70px;
+      right: 20px;
       width: 400px;
+      z-index:100;
       img{
         width: 100%;
         height: 300px;
@@ -66,7 +67,7 @@
         position: absolute;
         top: 5px;
         right: 10px;
-        color: $brown;
+        color: $white;
         text-align: center;
         @include shadow_text;
       }
@@ -75,13 +76,14 @@
         width: 100px;
         top:85px;
         left: 40px;
-        color: $white;
+        color: $brown;
         font-size: 24px;
         text-transform: uppercase;
         font-weight: bold;
         @include shadow_text;
 
         &.discount{
+          color: $white;
           position: absolute;
           top: 90px;
           left: 150px;
@@ -99,7 +101,7 @@
         display: flex;
         align-items: center;
         justify-content: space-around;
-        background-color: $brown;
+        background-color: $blue;
         padding-left: 15px;
         border-bottom-left-radius: 5px;
         border-bottom-right-radius: 5px;
@@ -138,7 +140,6 @@
 
         a{
           color: $white;
-          //text-transform: uppercase;
           text-decoration: none;
           @include shadow_text;
 
@@ -160,6 +161,7 @@
 
             &:hover{
               @include shadow_block;
+              border: 2px solid $yellow;
             }
           }
         }
