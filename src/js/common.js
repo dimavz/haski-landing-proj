@@ -37,7 +37,7 @@ $(document).ready(function() {
 
 	//Карусель Bootstrap
     $('.carousel').carousel({
-        wrap:false,
+        // wrap:false,
         pause:null,
         interval: 10000
     });
