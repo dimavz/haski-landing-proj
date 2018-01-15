@@ -2,57 +2,72 @@
 @import "partitions/mixins";
 @import "partitions/media";
 
-#pupies{
+#pupies {
 
   background-color: $background-color;
   min-height: 200px;
 
-  .wrap_pupies{
-    //@include flex-center;
+  .wrap_pupies {
 
-    h2{
-        @include clear;
-        padding-top: 50px;
-        margin-bottom: 50px;
-        font-family: "Roboto Slab", sans-serif;
-        font-weight: bold;
-        font-size: 42px;
+    h2 {
+      @include clear;
+      padding-top: 50px;
+      margin-bottom: 50px;
+      font-family: "Roboto Slab", sans-serif;
+      font-weight: bold;
+      font-size: 42px;
       text-align: center;
-        color: $white;
-        @include shadow_text;
-        z-index: 50;
+      color: $white;
+      @include shadow_text;
+      z-index: 50;
     }
 
-    .puppy{
-      margin: 10px 0px;
+    .puppy {
+      margin: 10px;
+      margin-bottom: 40px;
       padding: 10px;
       display: flex;
       justify-content: space-between;
       align-items: flex-start;
-      //background-color: $white;
-      background: linear-gradient(to top, #1483ba, #6ebadb);
+      background: linear-gradient(to top, #067CB6, #7fc1de);
 
-      .wrap_slider{
+      .wrap_slider {
         width: 50%;
         height: 350px;
         @include shadow_block;
 
-        .carousel-inner{
+        .carousel-inner {
 
-          .item{
+          .item {
             background-color: $white;
             border: 1px solid $blue;
             width: 100%;
-            img{
+            img {
               padding: 10px;
               width: 100%;
               max-height: 350px;
             }
           }
         }
+        .carousel-control{
+          //position: absolute;
+          height: 50px;
+          width: 50px;
+          top: 82%;
+          //bottom: 0;
+          &.left{
+            @include flex-center;
+            position: absolute;
+            right: 0;
+            left: 80%;
+          }
+          &.right{
+            right: 12px;
+          }
+        }
       }
 
-      .content_puppy{
+      .content_puppy {
         width: 50%;
         margin-top: 0;
         margin-right: auto;
@@ -60,37 +75,86 @@
         display: flex;
         flex-direction: column;
 
-        .title{
+        .title {
           padding: 5px;
           margin-bottom: 20px;
           display: flex;
           align-items: center;
-          height: 50px;
+          height: 40px;
           justify-content: space-between;
-          background-color: $background-color;
           @include shadow_block;
 
-           h3{
-             color: $white;
-             font-family: "Roboto Slab" , sans-serif;
-             padding-left: 10px;
-             @include shadow_text;
-             font-size: 24px;
-           }
-          i{
+          &.boy{
+            background-color: $background-color;
+          }
+
+          &.girl{
+            background-color: $title_mather_bg;
+
+            i {
+              color: $button_mather_color;
+              font-size: 80px;
+              transform: rotate(45deg);
+              margin-top: 24px;
+              @include shadow_text;
+              //-webkit-text-stroke: 1px $white;
+            }
+          }
+
+          h3 {
+            @include clear;
             color: $white;
-            font-size: 70px;
+            font-family: "Roboto Slab", sans-serif;
+            padding-left: 10px;
             @include shadow_text;
+            font-size: 24px;
+
+          }
+          i {
+            color: $marine;
+            font-size: 80px;
+            transform: rotate(180deg);
+            margin-top: 20px;
+            @include shadow_text;
+            //-webkit-text-stroke: 1px $white;
           }
         }
 
-        .text{
+        .text {
           margin-left: 20px;
+          margin-bottom: 20px;
           color: $white;
           @include shadow_text;
-          min-height: 200px;
-          max-height: 250px;
+          //min-height: 200px;
+          //max-height: 250px;
+          height: 200px;
           overflow: hidden;
+        }
+
+        a{
+          color: $white;
+          text-decoration: none;
+
+          &.button{
+            font-family: "Roboto Slab", sans-serif;
+            text-align: center;
+            padding: 5px 10px;
+            background-color: $background-color;
+            width: 120px;
+            margin-left: 20px;
+            border: 1px solid $white;
+            border-radius: 3px;
+            @include shadow_block;
+
+            &.girl{
+              background-color: $button_mather_color;
+            }
+
+            &:hover{
+              color: $yellow;
+              border: 1px solid $yellow;
+            }
+          }
         }
       }
     }
