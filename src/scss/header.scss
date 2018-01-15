@@ -4,13 +4,18 @@
 
 #header{
   @include clear;
+  background: url("../images/backgrounds/header_bg.jpg") no-repeat;
+  background-size: cover;
+  height: 100vh;
 
   .wrap_promo{
     position: relative;
     margin-top: 54px;
     margin-left: 0px;
+
     img{
       width: 100%;
+      visibility: hidden;
     }
 
     .cover{

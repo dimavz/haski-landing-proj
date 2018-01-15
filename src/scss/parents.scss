@@ -6,20 +6,26 @@
 
   .wrap_parents{
     position: relative;
-    background-color: $background-color;
+    //background-color: $background-color;
+    background: url("../images/backgrounds/gory_bg.jpg") no-repeat;
+    background-size: cover;
+    //opacity: .2;
     display: flex;
     flex-direction: column;
-    //min-height: 700px;
+    min-height: 650px;
 
     .background{
       position: absolute;
       top: 0;
       left: 0;
       width: 100%;
+      background-color: $background-color;
+      opacity: .8;
       min-height: 650px;
-      background: url("../images/backgrounds/gory_bg.jpg") no-repeat;
-      background-size: cover;
-      opacity: .2;
+      //min-height: 650px;
+      //background: url("../images/backgrounds/gory_bg.jpg") no-repeat;
+      //background-size: cover;
+      //opacity: .2;
     }
 
     h2{
@@ -32,6 +38,7 @@
       font-size: 42px;
       color: $white;
       @include shadow_text;
+      z-index: 50;
     }
 
     .row{
