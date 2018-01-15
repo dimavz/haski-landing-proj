@@ -36,7 +36,11 @@ $(document).ready(function() {
 	});
 
 	//Карусель Bootstrap
-    $('.carousel').carousel('pause');
+    $('.carousel').carousel({
+        wrap:false,
+        pause:null,
+        interval: 10000
+    });
 
 	//Каруселька
 	//Документация: https://owlcarousel2.github.io/OwlCarousel2/
