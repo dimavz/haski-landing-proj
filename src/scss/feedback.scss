@@ -2,7 +2,7 @@
 @import "partitions/mixins";
 @import "partitions/media";
 
-#form_consultant{
+#feedback{
   background: url("../images/backgrounds/upragka_bg.jpg") no-repeat;
   background-size: cover;
   min-height: 350px;
@@ -42,6 +42,7 @@
         margin-bottom: 15px;
         margin-top: -10px;
         @include shadow_block;
+        @include shadow_text;
       }
 
       .group{

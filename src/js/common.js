@@ -41,7 +41,7 @@ $(document).ready(function() {
         loop:true,
 		// dots:true,
         margin: 30,
-        autoplay:true,
+        autoplay:false,
         autoplayTimeout:2000,
 		// nav:true,
         autoplayHoverPause:true,
@@ -51,13 +51,13 @@ $(document).ready(function() {
                 items:1
             },
             768:{
-                items:2
+                items:1
             },
             992:{
-                items:3
+                items:1
             },
             1200:{
-                items:4
+                items:1
             }
         }
     });
