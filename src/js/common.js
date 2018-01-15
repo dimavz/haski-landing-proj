@@ -116,4 +116,20 @@ $(document).ready(function() {
 		return false;
 	});
 
+    //Паралакс эффект
+    // var st = $(this).scrollTop();
+    // var tr = "transform:translate (0%, "+ st +"%);";
+    // console.log(tr);
+    //
+    // $("#form_consultant").css( {"transform" :"translate (0%,"+ st +"%);"} );
+
+    //Паралакс эффект
+    // $(this).scroll(function () {
+    //     var st = $(this).scrollTop();
+    //     var tr = "transform : translate (0%, "+ st +"%);";
+    //     console.log(tr);
+    //
+    //     $('.consult').css({tr});
+    // });
 });
+
