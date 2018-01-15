@@ -156,6 +156,32 @@
             }
           }
         }
+
+        .lock{
+          font-family: "Roboto Slab", sans-serif;
+          display: flex;
+          justify-content: space-around;
+          align-items: center;
+          margin-left: 20px;
+          padding: 5px 10px;
+          background-color: $green;
+          width: 170px;
+          border: 1px solid $white;
+          border-radius: 3px;
+          @include shadow_block;
+          @include shadow_text;
+
+          i{
+            color: $white;
+            font-size: 26px;
+            @include shadow_text;
+          }
+          span{
+            color: $white;
+            //font-size: 24px;
+            text-transform: uppercase;
+          }
+        }
       }
     }
 
