@@ -6,6 +6,7 @@
 
   background-color: $background-color;
   min-height: 200px;
+  margin-bottom: 50px;
 
   .wrap_pupies {
 
@@ -232,6 +233,7 @@
       @include shadow_block;
       @include shadow_text;
       border: 4px dashed $orange;
+      border-radius: 15%;
     }
   }
 }
