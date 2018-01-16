@@ -213,4 +213,25 @@
     }
 
   }
+
+  .wrap_garanty{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
+    .garanty{
+      @include flex-center;
+
+      img {
+        width: 300px;
+      }
+    }
+    .garanty_text{
+      padding: 20px;
+      background-color: $white;
+      @include shadow_block;
+      @include shadow_text;
+      border: 4px dashed $orange;
+    }
+  }
 }
