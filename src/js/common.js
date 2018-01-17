@@ -35,6 +35,19 @@ $(document).ready(function() {
 		});
 	});
 
+	//Анимация элементов
+    // Подробнее по ссылке http://mynameismatthieu.com/WOW/docs.html
+    wow = new WOW(
+        {
+            boxClass:     'wow',      // default
+            animateClass: 'animated', // default
+            offset:       0,          // default
+            mobile:       false,
+            live:         true        // default
+        }
+    )
+    wow.init();
+
 	//Карусель Bootstrap
     $('.carousel').carousel({
         // wrap:false,
