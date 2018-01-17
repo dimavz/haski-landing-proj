@@ -72,6 +72,7 @@
         border-radius: 3px;
         border: 1px solid $white;
         @include shadow_block;
+        @include shadow_text;
 
         &:hover{
           color: $yellow;

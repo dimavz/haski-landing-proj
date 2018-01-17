@@ -1,0 +1,104 @@
+@import "partitions/variables";
+@import "partitions/mixins";
+@import "partitions/media";
+
+#contacts{
+  margin-top: 30px;
+  margin-bottom: 30px;
+
+  h2{
+    @include clear;
+    padding-top: 50px;
+    margin-bottom: 50px;
+    font-family: "Roboto Slab", sans-serif;
+    font-weight: bold;
+    font-size: 42px;
+    text-align: center;
+    color: $white;
+    @include shadow_text;
+    z-index: 50;
+  }
+
+  .wrap_contacts{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .map{
+      background-color: $orange;
+      width: 50%;
+      padding: 10px;
+      border-radius: 5px;
+      border: 1px solid $white;
+      @include shadow_block;
+    }
+    .adress{
+      @include flex-center;
+      background-color: $dark-blue;
+      width: 50%;
+      padding: 20px;
+      border-top-right-radius: 5px;
+      border-bottom-right-radius: 5px;
+      //border: 1px solid $white;
+      @include shadow_block;
+
+      .title{
+        display: flex;
+        align-items: center;
+        padding: 10px 20px;
+        color: $white;
+        font-size: 32px;
+        margin-bottom: 20px;
+        background-color: $title_adress;
+        border: 1px solid $white;
+        border-radius: 10px;
+        @include shadow_text;
+        @include shadow_block;
+
+      i{
+        margin-right: 20px;
+        color: $red;
+      }
+
+        h3{
+          @include clear;
+          //text-transform: uppercase;
+
+        }
+      }
+
+
+      .info{
+        color: $white;
+        @include shadow_text;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        i{
+
+          margin-right: 20px;
+        }
+
+        span{
+          font-size: 24px;
+        }
+
+        .mobile{
+          display: flex;
+          align-items: center;
+          //justify-content: space-between;
+        }
+        .skype{
+          display: flex;
+          align-items: center;
+          //justify-content: space-between;
+        }
+        .email{
+          display: flex;
+          align-items: center;
+        }
+      }
+    }
+
+  }
+}
