@@ -3,6 +3,7 @@
 @import "partitions/media";
 
 #how_to_buy {
+  margin-bottom: 30px;
 
   .wrap_buy {
 
@@ -25,6 +26,7 @@
       @include flex-center;
       padding: 10px 20px;
       background-color: $blue;
+      border: 1px solid $white;
       border-radius: 5px;
       margin-bottom: 30px;
       @include shadow_block;
@@ -56,6 +58,26 @@
             @include shadow_text;
           }
         }
+    }
+
+    a{
+      color: $white;
+      text-decoration: none;
+
+      &.button{
+        text-transform: uppercase;
+        background-color: $orange;
+        padding: 10px;
+        @include flex-center;
+        border-radius: 3px;
+        border: 1px solid $white;
+        @include shadow_block;
+
+        &:hover{
+          color: $yellow;
+          border: 1px solid $yellow;
+        }
+      }
     }
   }
 }
