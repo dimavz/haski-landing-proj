@@ -2,3 +2,25 @@
 @import "partitions/mixins";
 @import "partitions/media";
 
+#footer{
+  background-color: $white;
+
+  .wrap_footer{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: 50px;
+
+    .copyrat{
+      font-size: 14px;
+    }
+
+    .social_buttons{
+      margin-left: auto;
+
+      i{
+        font-size: 42px;
+      }
+    }
+  }
+}
