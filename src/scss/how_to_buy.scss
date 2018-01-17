@@ -1,0 +1,61 @@
+@import "partitions/variables";
+@import "partitions/mixins";
+@import "partitions/media";
+
+#how_to_buy {
+
+  .wrap_buy {
+
+    @include flex-center;
+
+    h2 {
+      @include clear;
+      padding-top: 50px;
+      margin-bottom: 50px;
+      font-family: "Roboto Slab", sans-serif;
+      font-weight: bold;
+      font-size: 42px;
+      text-align: center;
+      color: $white;
+      @include shadow_text;
+      z-index: 50;
+    }
+
+    .benefit_list{
+      @include flex-center;
+      padding: 10px 20px;
+      background-color: $blue;
+      border-radius: 5px;
+      margin-bottom: 30px;
+      @include shadow_block;
+
+        .benefit{
+          display: flex;
+          align-items: flex-start;
+          justify-content: flex-start;
+          padding: 10px;
+          margin: 10px;
+          border-bottom: 1px dashed $white;
+          width: 100%;
+          z-index: 40;
+          opacity: 1;
+
+          &:last-child{
+            border-bottom: none;
+          }
+
+          i{
+            color: lighten($green,15%) ;
+            font-size: 42px;
+            @include shadow_text;
+            margin-right: 20px;
+          }
+          .text{
+            color: $white;
+            font-size: 24px;
+            @include shadow_text;
+          }
+        }
+    }
+  }
+}

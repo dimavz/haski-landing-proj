@@ -93,7 +93,7 @@
             background-color: $title_mather_bg;
 
             i {
-              color: $button_mather_color;
+              color: lighten($button_mather_color,15%);
               font-size: 80px;
               transform: rotate(45deg);
               margin-top: 24px;
@@ -232,8 +232,8 @@
       background-color: $white;
       @include shadow_block;
       @include shadow_text;
-      border: 4px dashed $orange;
-      border-radius: 15%;
+      border: 4px dashed $background-color;
+      border-radius: 10px;
     }
   }
 }
