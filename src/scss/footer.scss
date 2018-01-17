@@ -13,13 +13,34 @@
 
     .copyrat{
       font-size: 14px;
+      color: $blue;
+
+      p{
+        @include clear;
+      }
     }
 
     .social_buttons{
       margin-left: auto;
 
+      a{
+        text-decoration: none;
+      }
+
       i{
         font-size: 42px;
+        margin: 5px;
+
+        &.fa-facebook-square{
+          color: $blue;
+        }
+
+        &.fa-google-plus-square{
+          color: $red;
+        }
+        &.fa-youtube{
+          color: $red;
+        }
       }
     }
   }
