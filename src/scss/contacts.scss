@@ -25,12 +25,13 @@
     align-items: center;
 
     .map{
-      background-color: $orange;
+      background-color: $dark-blue;
       width: 50%;
-      padding: 10px;
+      padding: 5px;
       border-radius: 5px;
-      border: 1px solid $white;
+      //border: 1px solid $marine;
       @include shadow_block;
+      z-index: 10;
     }
     .adress{
       @include flex-center;
@@ -39,8 +40,11 @@
       padding: 20px;
       border-top-right-radius: 5px;
       border-bottom-right-radius: 5px;
-      //border: 1px solid $white;
+      //border: 1px solid $marine;
+      //border-left: none;
       @include shadow_block;
+      z-index: 20;
+      margin-left: -1px;
 
       .title{
         display: flex;
@@ -74,9 +78,10 @@
         display: flex;
         flex-direction: column;
         justify-content: space-around;
-        i{
 
+        i{
           margin-right: 20px;
+          color: $marine;
         }
 
         span{
