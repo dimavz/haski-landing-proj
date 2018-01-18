@@ -1,6 +1,6 @@
 $(document).ready(function() {
 
-    // Активация слежения за меню https://getbootstrap.com/docs/3.3/javascript/#scrollspy
+    // Активация пунктов меню при прокрутке лендинга https://getbootstrap.com/docs/3.3/javascript/#scrollspy
     $('body').scrollspy({ target: '#navbar' });
 
     $('[data-spy="scroll"]').each(function () {
