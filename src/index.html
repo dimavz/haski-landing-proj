@@ -86,13 +86,13 @@
                     <span>до 22 января 2018</span>
                     <span class="discount">15%</span>
                     <div class="cost">
-                        <span class="old_cost">$ 450</span>
-                        <span class="new_cost">$ 383</span>
+                        <span class="old_cost">от $ 450</span>
+                        <span class="new_cost">от $ 383</span>
                     </div>
                     <div class="wrap_time">
                         <div class="countdown" date-time="2018-01-19"></div>
                     </div>
-                    <a href="" class="button">Оформить заявку</a>
+                    <a href="#request" class="button scroll_request">Оформить заявку</a>
                 </div>
             </div>
         </div>
@@ -133,7 +133,7 @@
 
                             </div>
                         </div>
-                        <a href="#feedback" class="button scroll_feedback">Подробнее</a>
+                        <a href="#feedback" class="button scroll_feedback">Узнать больше</a>
                     </div>
                 </div>
                 <div class="col-md-5">
@@ -165,7 +165,7 @@
 
                             </div>
                         </div>
-                        <a href="#feedback" class="button scroll_feedback">Подробнее</a>
+                        <a href="#feedback" class="button scroll_feedback">Узнать больше</a>
                     </div>
                 </div>
             </div>
@@ -180,6 +180,7 @@
             <div class="form_consult">
                 <h3>Получить консультацию</h3>
                 <form id="feedback_form">
+                    <input type="hidden" name="type_message" value="Консультация">
                     <div class="group">
                         <i class="fa fa-user" aria-hidden="true"></i>
                         <input type="text" class="name" name="name" placeholder="Ваше ФИО">
@@ -250,10 +251,10 @@
                         <p>Doloremque enim fuga iure minima, obcaecati quisquam soluta sunt veritatis vero voluptate!
                             Alias aperiam labore laudantium reprehenderit totam. Consectetur, optio?</p>
                     </div>
-                    <a href="#" class="button">Подробнее</a>
+                    <a href="#feedback" class="button scroll_feedback">Узнать больше</a>
                 </div>
             </div>
-            <div class="puppy wow bounceInLeft" data-wow-offset="10" data-wow-duration="2s">
+            <div class="puppy wow bounceInRight" data-wow-offset="10" data-wow-duration="2s">
                 <div class="wrap_slider">
                     <div id="puppy2" class="carousel slide" data-ride="carousel">
                         <!-- Wrapper for slides -->
@@ -298,7 +299,8 @@
                         <p>Doloremque enim fuga iure minima, obcaecati quisquam soluta sunt veritatis vero voluptate!
                             Alias aperiam labore laudantium reprehenderit totam. Consectetur, optio?</p>
                     </div>
-                    <a href="#" class="button girl">Подробнее</a>
+                    <a href="#feedback" class="button girl scroll_feedback">Узнать больше</a>
+                    <!--<a href="#" class="button girl">Подробнее</a>-->
                 </div>
             </div>
             <div class="puppy wow bounceInLeft" data-wow-offset="10" data-wow-duration="2s">
@@ -353,7 +355,7 @@
 
                 </div>
             </div>
-            <div class="puppy wow bounceInLeft" data-wow-offset="10" data-wow-duration="2s">
+            <div class="puppy wow bounceInRight" data-wow-offset="10" data-wow-duration="2s">
                 <div class="wrap_slider">
                     <div id="puppy4" class="carousel slide" data-ride="carousel">
                         <!-- Wrapper for slides -->
@@ -428,6 +430,7 @@
             <div class="form_request">
                 <h3>Оформить заявку</h3>
                 <form id="request_form">
+                    <input type="hidden" name="type_message" value="Заявка на покупку">
                     <div class="group">
                         <i class="fa fa-user" aria-hidden="true"></i>
                         <input type="text" class="name" name="name" placeholder="Ваше ФИО">
@@ -457,33 +460,33 @@
                 <div class="benefit">
                     <i class="fa fa-check-square-o" aria-hidden="true"></i>
                     <div class="text">
-                        <p>Отправьте нам заявку или свяжитесь по указанному телефону для приобретения щенка</p>
+                        <p>Отправьте нам заявку или свяжитесь с нами по телефону для приобретения щенка</p>
                     </div>
                 </div>
                 <div class="benefit">
                     <i class="fa fa-check-square-o" aria-hidden="true"></i>
                     <div class="text">
-                        <p>После получения Вашей заявки мы свяжемся с вами в ближайшее время и согласуем место и время
+                        <p>В случае размещения заявки мы свяжемся с вами в ближайшее время и согласуем место и время
                             совершения сделки. </p>
                     </div>
                 </div>
                 <div class="benefit">
                     <i class="fa fa-check-square-o" aria-hidden="true"></i>
                     <div class="text">
-                        <p>После полной оплаты Вы получите полный пакет дкументов на щенка.</p>
+                        <p>После оплаты Вы получите полный пакет документов на щенка.</p>
                     </div>
                 </div>
                 <div class="benefit">
                     <i class="fa fa-check-square-o" aria-hidden="true"></i>
                     <div class="text">
-                        <p>Возможна оплата стоимости в рассрочку. Для этого дополнительно заключается договор.</p>
+                        <p>Возможна оплата в рассрочку. Для этого дополнительно заключается договор.</p>
                     </div>
                 </div>
                 <div class="benefit">
                     <i class="fa fa-check-square-o" aria-hidden="true"></i>
                     <div class="text">
-                        <p>В случае приобретения щенка в рассрочку первый платёж составляет 50% стоимости.</p>
-                        <p> Остальные платежи выплачиваются равными долями в течении следующих двух месяцев.</p>
+                        <p>В случае приобретения щенка в рассрочку первый платёж составляет 50% от полной стоимости.
+                        Остальная часть выплачивается равными долями в течении следующих двух месяцев.</p>
                     </div>
                 </div>
             </div>
@@ -496,13 +499,13 @@
                     <span>до 22 января 2018</span>
                     <span class="discount">15%</span>
                     <div class="cost">
-                        <span class="old_cost">$ 450</span>
-                        <span class="new_cost">$ 383</span>
+                        <span class="old_cost">от $ 450</span>
+                        <span class="new_cost">от $ 383</span>
                     </div>
                     <div class="wrap_time">
                         <div class="countdown" date-time="2018-01-19"></div>
                     </div>
-                    <a href="" class="button">Оформить заявку</a>
+                    <a href="#request" class="button scroll_request">Оформить заявку</a>
                 </div>
             </div>
         </div>
