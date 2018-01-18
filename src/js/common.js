@@ -54,8 +54,8 @@ $(document).ready(function() {
         });
     });
 
-    $("a.scroll_pupies").click(function() {
-        $.scrollTo($("#pupies"), 800, {
+    $("a.scroll_puppies").click(function() {
+        $.scrollTo($("#puppies"), 800, {
             offset: -10
         });
     });
