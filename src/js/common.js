@@ -177,7 +177,7 @@ $(document).ready(function() {
 			url: "mail.php",
 			data: $("form").serialize()
 		}).done(function() {
-			alert("Спасибо за заявку! Мы свяжемся с Вами в ближайшее время.");
+			alert("Спасибо! Ваше сообщение отправлено. Мы свяжемся с Вами в ближайшее время.");
 			setTimeout(function() {
 				$.fancybox.close();
 			}, 1000);
