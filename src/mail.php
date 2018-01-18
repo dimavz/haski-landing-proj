@@ -11,3 +11,5 @@ $email = trim($_GET["email"]);
 $pagetitle = "Новое сообщение с сайта \"$sitename\"";
 $message = "Тип сообщения:$type_message \nИмя: $name \nТелефон: $phone \nE-mail: $email";
 mail($recepient, $pagetitle, $message, "Content-type: text/plain; charset=\"utf-8\"\n From: $recepient");
+
+?>
