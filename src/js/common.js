@@ -42,6 +42,12 @@ $(document).ready(function() {
 	// 	});
 	// });
 
+    $("a.scroll_request").click(function() {
+        $.scrollTo($("#request"), 800, {
+            offset: -10
+        });
+    });
+
     $("a.scroll_feedback").click(function() {
         $.scrollTo($("#feedback"), 800, {
             offset: -10
@@ -171,7 +177,7 @@ $(document).ready(function() {
 			url: "mail.php",
 			data: $("form").serialize()
 		}).done(function() {
-			alert("Спасибо за заявку!");
+			alert("Спасибо за заявку! Мы свяжемся с Вами в ближайшее время.");
 			setTimeout(function() {
 				$.fancybox.close();
 			}, 1000);
