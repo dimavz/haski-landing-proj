@@ -104,16 +104,18 @@
           display: flex;
           align-items: center;
           justify-content: space-around;
-          width: 200px;
+          width: 250px;
           margin-top: -10px;
           margin-bottom: 10px;
 
           .old_cost{
+            text-transform: none;
             color: $brown;
             text-decoration: line-through;
             font-size: 22px;
           }
           .new_cost{
+            text-transform: none;
             color: lighten($green, 25%);
             font-size: 32px;
           }
