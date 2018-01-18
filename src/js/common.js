@@ -36,11 +36,41 @@ $(document).ready(function() {
 
 	//Плавный скролл до блока .div по клику на .scroll
 	//Документация: https://github.com/flesler/jquery.scrollTo
-	$("a.scroll").click(function() {
-		$.scrollTo($(".div"), 800, {
-			offset: -90
-		});
-	});
+	// $("a.scroll").click(function() {
+	// 	$.scrollTo($(".div"), 800, {
+	// 		offset: -90
+	// 	});
+	// });
+
+    $("a.scroll_home").click(function() {
+        $.scrollTo($("#header"), 800, {
+            offset: -10
+        });
+    });
+
+    $("a.scroll_parents").click(function() {
+        $.scrollTo($("#parents"), 800, {
+            offset: -10
+        });
+    });
+
+    $("a.scroll_pupies").click(function() {
+        $.scrollTo($("#pupies"), 800, {
+            offset: -10
+        });
+    });
+
+    $("a.scroll_how_to_buy").click(function() {
+        $.scrollTo($("#how_to_buy"), 900, {
+            offset: -5
+        });
+    });
+
+    $("a.scroll_contacts").click(function() {
+        $.scrollTo($("#contacts"), 800, {
+            offset: -10
+        });
+    });
 
 	//Анимация элементов
     // Подробнее по ссылке http://mynameismatthieu.com/WOW/docs.html
