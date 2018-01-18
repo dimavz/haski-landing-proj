@@ -1,5 +1,12 @@
 $(document).ready(function() {
 
+    // Активация слежения за меню https://getbootstrap.com/docs/3.3/javascript/#scrollspy
+    $('body').scrollspy({ target: '#navbar' });
+
+    $('[data-spy="scroll"]').each(function () {
+        var $spy = $(this).scrollspy('refresh')
+    });
+
 	//Таймер обратного отсчета
 	//Документация: http://keith-wood.name/countdown.html
 	//<div class="countdown" date-time="2015-01-07"></div>

@@ -2,61 +2,63 @@
 @import "partitions/mixins";
 @import "partitions/media";
 
-#nav{
+#navbar {
   background-color: $white;
   @include shadow_block;
   position: fixed;
   width: 100%;
   z-index: 1000;
-  height: 50px;
+  //height: 50px;
 
-  .wrap_menu{
+  .wrap_menu {
     display: flex;
     align-items: center;
     justify-content: flex-start;
     flex-wrap: wrap;
     padding-left: 10px;
 
-    .logo_icon{
+    .logo_icon {
       display: flex;
       align-items: center;
       justify-content: center;
-      img{
+      img {
         width: 44px;
         height: 44px;
       }
     }
 
-    ul{
+    ul.nav{
       display: flex;
       align-items: center;
       flex-wrap: wrap;
-      margin-left: 20px;
-      li{
-        margin-right: 20px;
-        padding: 5px;
+      margin-left: 10px;
 
-        a{
+      li {
+        margin-right: 5px;
+        padding: 3px;
+
+        a {
           text-decoration: none;
           text-transform: uppercase;
           color: $black;
-          font-size:18px;
+          font-size: 18px;
           font-family: RobotoRegular, sans-serif;
         }
 
-        &:hover{
-          span{
+        &:hover {
+          span {
             background-color: $blue;
           }
-          a{
-            color:$blue;
+          a {
+            color: $blue;
+            background-color: transparent;
           }
         }
-        &.active{
-          a{
+        &.active {
+          a {
             color: $blue;
           }
-          span{
+          span {
             display: block;
             height: 4px;
             width: 100%;
@@ -64,7 +66,7 @@
             transition: all .5s;
           }
         }
-        span{
+        span {
           display: block;
           @include shadow_block;
           height: 4px;
@@ -73,25 +75,25 @@
         }
       }
     }
-    .phone{
+    .phone {
       display: flex;
       align-items: center;
       margin-left: auto;
       margin-right: 5px;
 
-      i{
+      i {
         margin-right: 10px;
         color: $blue;
         @include shadow_text;
       }
-      span{
+      span {
         @include shadow_text;
         color: $black;
-        font-size: 20px;
+        font-size: 16px;
       }
     }
 
-    .callback{
+    .callback {
       @include flex-center;
       margin-left: 5px;
       padding: 5px;
@@ -101,11 +103,11 @@
       @include shadow_block;
       @include shadow_text;
 
-      &:hover{
+      &:hover {
         border: 1px solid $yellow;
       }
 
-      a{
+      a {
         display: block;
         color: $white;
         text-decoration: none;
@@ -113,7 +115,7 @@
         height: 100%;
         border-radius: 5px;
 
-        &:hover{
+        &:hover {
           color: $yellow;
         }
       }
