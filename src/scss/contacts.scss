@@ -101,6 +101,15 @@
         .email{
           display: flex;
           align-items: center;
+
+          a{
+            color: $white;
+            text-decoration: none;
+
+            &:hover{
+              color: $yellow;
+            }
+          }
         }
       }
     }
