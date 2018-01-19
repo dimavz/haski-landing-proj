@@ -1,5 +1,4 @@
 <?php
-
 $email_in= "zatulenko@gmail.com";
 $email_out= "info@haski-puppies.info";
 
@@ -23,10 +22,7 @@ $name = urldecode($name);
 $phone = urldecode($phone);
 $email = urldecode($email);
 
-
-
 $pagetitle = "Новое сообщение с сайта ".$sitename ;
 $message = "Тип сообщения:".$type_message."\nИмя:".$name."\nТелефон:".$phone."\nE-mail:".$email;
 mail($email_in, $pagetitle, $message, "Content-type: text/plain; charset=\"utf-8\"\n From: $email_out");
-
 ?>
