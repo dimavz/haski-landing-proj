@@ -18,7 +18,8 @@ var config ={
         js:'src/js/**/*.js',
         libs:'src/libs/**/*',
         scss:'src/scss/**/*.scss',
-        html:'src/**/*.html'
+        html:'src/**/*.html',
+        php:'src/*.php'
     },
     output:{
         nameFileCss:'main.min.css',
@@ -62,10 +63,15 @@ gulp.task('clean', function() {
     return del.sync('dist'); // Удаляем папку dist перед сборкой
 });
 
-gulp.task('build',['clean','scss'], function () {
-    var buildCss = gulp.src(config.output.pathCss +"/"+ config.output.nameFileCss)// Переносим библиотеки в продакшен
-        .pipe(cssnano()) // Сжимаем
-        .pipe(gulp.dest(config.output.pathCssDist));
+gulp.task('compress_css', function() {
+    gulp.src(config.output.pathCss +"/"+ config.output.nameFileCss)// Выбираем основной файл стилей main.min.css
+        .pipe(cssnano()) // Сжимаем его
+        .pipe(gulp.dest(config.output.pathCss)); // Переносим в папку src/css
+});
+
+gulp.task('build',['clean','scss','compress_css'], function () {
+    var buildCss = gulp.src(config.paths.css)// Выбираем все файлы css
+        .pipe(gulp.dest(config.output.pathCssDist));// Переносим файлы css в продакшен
 
     var buildCssFonts = gulp.src(config.output.pathCss +'/fonts.css') // Переносим стили шрифтов в продакшен
         .pipe(gulp.dest(config.output.pathCssDist));
@@ -79,6 +85,8 @@ gulp.task('build',['clean','scss'], function () {
     var buildLibs = gulp.src(config.paths.libs) // Переносим скрипты в продакшен
         .pipe(gulp.dest( config.output.pathDist+'/libs'));
     var buildHtml = gulp.src(config.paths.html) // Переносим скрипты в продакшен
+        .pipe(gulp.dest( config.output.pathDist));
+    var buildPhp = gulp.src(config.paths.php) // Переносим PHP в продакшен
         .pipe(gulp.dest( config.output.pathDist));
 
 });
