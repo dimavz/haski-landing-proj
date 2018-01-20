@@ -12,10 +12,10 @@
 
     .form_cover{
       position: absolute;
-      top: 60px;
-      left: 128px;
-      width: 350px;
-      height: 250px;
+      top: 20px;
+      left: 100px;
+      width: 310px;
+      height: 300px;
       background-color: $background-color;
       border: 1px solid $white;
       border-radius: 3px;
@@ -25,22 +25,23 @@
 
     .form_consult{
       position: absolute;
-      top: 60px;
-      left: 130px;
+      top: 20px;
+      left: 100px;
       @include flex-center;
-      margin: 10px;
-      padding: 10px;
+      //margin: 10px;
+      //padding: 10px;
 
       h3{
         @include clear;
         color: $orange;
         font-family: "Roboto", sans-serif;
+        font-size: 22px;
         padding: 5px;
         background-color: $title_form_bg;
         text-transform: uppercase;
-        margin-left: -15px;
+        margin-left: 0px;
         margin-bottom: 15px;
-        margin-top: -10px;
+        margin-top: 0px;
         @include shadow_block;
         @include shadow_text;
       }
@@ -49,7 +50,7 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
-        margin: 7px;
+        margin: 5px;
         padding: 2px;
         background-color: $white;
         border: 2px solid $orange;
@@ -63,6 +64,29 @@
           margin-left: 5px;
         }
         input{
+          border: none;
+        }
+      }
+
+      .group-question{
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        margin: 5px;
+        padding: 2px;
+        background-color: $white;
+        border: 2px solid $orange;
+        border-radius: 3px;
+        @include shadow_block;
+
+        i{
+          color: $title_form_bg;
+          font-size: 20px;
+          margin-right: 5px;
+          margin-left: 5px;
+          //margin-right: 25px;
+        }
+        textarea{
           border: none;
         }
       }
