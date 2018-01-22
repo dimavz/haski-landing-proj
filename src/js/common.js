@@ -215,6 +215,8 @@ $(document).ready(function() {
     //     $('.consult').css({tr});
     // });
 
+    /***********************************************/
+
     // Эффекты рисования
     // Подробнее http://soulwire.github.io/sketch.js/
 
