@@ -101,7 +101,7 @@ $(document).ready(function() {
     $('.carousel').carousel({
         // wrap:false,
         pause:null,
-        interval: 10000
+        interval: false,
     });
 
 	//Каруселька
