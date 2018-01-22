@@ -9,6 +9,7 @@ var gulp = require('gulp'), // Подключаем Gulp
     cssnano = require('gulp-cssnano'), // Подключаем пакет для сжатия CSS файла
     del = require('del'), // Подключаем библиотеку для удаления файлов и папок
     imagemin = require('gulp-imagemin'), // Подключаем библиотеку для работы с изображениями
+    pngquant = require('imagemin-pngquant'), // Подключаем библиотеку для работы с png
 
 var config ={
     paths:{
