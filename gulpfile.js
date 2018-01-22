@@ -7,7 +7,8 @@ var gulp = require('gulp'), // Подключаем Gulp
     autoprefixer = require('gulp-autoprefixer'), // Подключаем библиотеку для автоматического добавления префиксов для разных браузеров
     browser = require('browser-sync'), // Подключаем сервер для обновлений Browser Sync
     cssnano = require('gulp-cssnano'), // Подключаем пакет для сжатия CSS файла
-    del = require('del'); // Подключаем библиотеку для удаления файлов и папок
+    del = require('del'), // Подключаем библиотеку для удаления файлов и папок
+    imagemin = require('gulp-imagemin'), // Подключаем библиотеку для работы с изображениями
 
 var config ={
     paths:{
