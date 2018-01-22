@@ -4,9 +4,12 @@
 
 #header{
   @include clear;
-  background: url("../images/backgrounds/header_bg.jpg") no-repeat;
-  background-size: cover;
-  height: 100vh;
+  position: relative;
+
+  #carousel-header{
+    position: absolute;
+    height: 100vh;
+  }
 
   .wrap_promo{
     position: relative;

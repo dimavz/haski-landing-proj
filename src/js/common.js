@@ -103,6 +103,10 @@ $(document).ready(function() {
         pause:null,
         interval: false,
     });
+    // Карусель Хэдера
+    $('#carousel-header').carousel({
+        interval: 5000
+    });
 
 	//Каруселька
 	//Документация: https://owlcarousel2.github.io/OwlCarousel2/
