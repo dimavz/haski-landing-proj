@@ -50,7 +50,7 @@ $(document).ready(function() {
 
     $("a.scroll_feedback").click(function() {
         $.scrollTo($("#feedback"), 800, {
-            offset: -10
+            offset: -40
         });
     });
 

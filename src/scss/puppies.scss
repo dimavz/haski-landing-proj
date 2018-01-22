@@ -147,6 +147,10 @@
             border-radius: 3px;
             @include shadow_block;
 
+            &.scroll_request{
+              background-color: $orange;
+            }
+
             &.girl{
               background-color: $button_mather_color;
             }
