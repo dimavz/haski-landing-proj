@@ -72,16 +72,39 @@ gulp.task('compress_css', function() {
         .pipe(gulp.dest(config.output.pathCss)); // Переносим в папку src/css
 });
 
-gulp.task('build',['clean','scss','compress_css'], function () {
-    var buildCss = gulp.src(config.paths.css)// Выбираем все файлы css
-        .pipe(gulp.dest(config.output.pathCssDist));// Переносим файлы css в продакшен
+gulp.task('compress_img', function() {
+    return gulp.src('src/imgages/**/*') // Берем все изображения из app
+        .pipe(cache(imagemin({  // Сжимаем их с наилучшими настройками с учетом кеширования
+            interlaced: true,
+            progressive: true,
+            svgoPlugins: [{removeViewBox: false}],
+            use: [pngquant()]
+        })))
+        .pipe(gulp.dest('dist/imgages')); // Выгружаем на продакшен
+});
 
-    var buildCssFonts = gulp.src(config.output.pathCss +'/fonts.css') // Переносим стили шрифтов в продакшен
+gulp.task('build',['clean','scss','compress_css'], function () {
+
+    // Переносим файлы css в продакшен
+    var buildCss = gulp.src(config.paths.css)// Выбираем все файлы css
         .pipe(gulp.dest(config.output.pathCssDist));
 
-    var buildFonts = gulp.src(config.paths.fonts) // Переносим шрифты в продакшен
+    // Переносим стили шрифтов в продакшен
+    var buildCssFonts = gulp.src(config.output.pathCss +'/fonts.css')
+        .pipe(gulp.dest(config.output.pathCssDist));
+
+    // Переносим шрифты в продакшен
+    var buildFonts = gulp.src(config.paths.fonts)
         .pipe(gulp.dest( config.output.pathDist+'/fonts'));
-    var buildImages = gulp.src(config.paths.images) // Переносим картинки в продакшен
+
+    // Переносим картинки в продакшен
+    var buildImages = gulp.src(config.paths.images)
+        .pipe(cache(imagemin({  // Сжимаем их с наилучшими настройками с учетом кеширования
+            interlaced: true,
+            progressive: true,
+            svgoPlugins: [{removeViewBox: false}],
+            use: [pngquant()]
+        })))
         .pipe(gulp.dest( config.output.pathDist+'/images'));
     var buildJS = gulp.src(config.paths.js) // Переносим скрипты в продакшен
         .pipe(gulp.dest( config.output.pathDist+'/js'));
