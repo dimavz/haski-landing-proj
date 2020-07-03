@@ -1,88 +1,117 @@
-/**
- * Created by Дмитрий on 19.12.2017.
- */
-var gulp = require('gulp'), // Подключаем Gulp
-    sass = require('gulp-sass'), //Подключаем Sass пакет для генерации css файлов
-    concat = require('gulp-concat'), // Подключаем gulp-concat (для конкатенации файлов)
-    autoprefixer = require('gulp-autoprefixer'), // Подключаем библиотеку для автоматического добавления префиксов для разных браузеров
-    browser = require('browser-sync'), // Подключаем сервер для обновлений Browser Sync
-    cssnano = require('gulp-cssnano'), // Подключаем пакет для сжатия CSS файла
-    del = require('del'); // Подключаем библиотеку для удаления файлов и папок
+var gulp = require('gulp');
+var browserSync = require('browser-sync').create();
+var sass = require('gulp-sass');
+var sourcemaps = require('gulp-sourcemaps');
+var autoprefixer = require('gulp-autoprefixer');
+var concat = require('gulp-concat');
+var cleanCSS = require('gulp-clean-css');
+var htmlmin = require('gulp-htmlmin');
+var clean = require('gulp-dest-clean');
 
-var config ={
-    paths:{
-        src:'src',
-        css:'src/css/**/*.css',
-        fonts:'src/fonts/**/*',
-        images:'src/images/**/*',
-        js:'src/js/**/*.js',
-        libs:'src/libs/**/*',
-        scss:'src/scss/**/*.scss',
-        html:'src/**/*.html'
+
+var config = {
+    paths: {
+        scss: 'src/scss/**/*.scss',
+        css: 'src/css/**/*.css',
+        html: 'src/*.html',
+        js: 'src/**/*.js'
     },
-    output:{
-        nameFileCss:'main.min.css',
-        pathCss:'src/css',
-        pathDist: 'dist',
-        pathCssDist:'dist/css',
+    output: {
+        nameFileCss: 'main.css',
+        pathCss: 'src/css',
+        pathDistCss: 'dist/css',
+        pathDistHtml: 'dist'
     },
-    srv_options:{
-        basePath:'src'
+    srv_options: {
+        basePath: 'src'
     }
 };
-gulp.task('browser', function(){
-    browser({
-        server: {
-            baseDir: config.srv_options.basePath
-        },
-        notify: false
-    });
-});
 
-
-gulp.task('scss', function () {
+gulp.task('sass', function(done) {
     gulp.src(config.paths.scss)
+        .pipe(sourcemaps.init())
         .pipe(sass())
+        .pipe(autoprefixer())
         .pipe(concat(config.output.nameFileCss))
-        .pipe(autoprefixer(['last 15 versions', '> 1%', 'ie 8', 'ie 7'], { cascade: true }))
+        .pipe(sourcemaps.write('.'))
         .pipe(gulp.dest(config.output.pathCss))
-        .pipe(browser.reload({stream: true}));
+        .pipe(browserSync.stream());
+
+    done();
 });
 
-
-
-gulp.task('watch',['scss','browser'], function () {
-    gulp.watch(config.paths.scss, ['scss'],browser.reload);
-    gulp.watch(config.paths.html,browser.reload);
-    gulp.watch(config.paths.js,browser.reload);
-    gulp.watch(config.paths.css,browser.reload);
+gulp.task('min-css', function () {
+    return gulp.src(config.paths.css)
+        .pipe(cleanCSS({compatibility: 'ie8'}))
+        .pipe(gulp.dest(config.output.pathDistCss));
 });
 
-gulp.task('clean', function() {
-    return del.sync('dist'); // Удаляем папку dist перед сборкой
+gulp.task('min-html', function () {
+    return gulp.src(config.paths.html)
+        .pipe(htmlmin({collapseWhitespace: true}))
+        .pipe(gulp.dest(config.output.pathDistHtml));
 });
 
-gulp.task('build',['clean','scss'], function () {
-    var buildCss = gulp.src(config.output.pathCss +"/"+ config.output.nameFileCss)// Переносим библиотеки в продакшен
-        .pipe(cssnano()) // Сжимаем
-        .pipe(gulp.dest(config.output.pathCssDist));
+gulp.task('clean', function () {
 
-    var buildCssFonts = gulp.src(config.output.pathCss +'/fonts.css') // Переносим стили шрифтов в продакшен
-        .pipe(gulp.dest(config.output.pathCssDist));
-
-    var buildFonts = gulp.src(config.paths.fonts) // Переносим шрифты в продакшен
-        .pipe(gulp.dest( config.output.pathDist+'/fonts'));
-    var buildImages = gulp.src(config.paths.images) // Переносим картинки в продакшен
-        .pipe(gulp.dest( config.output.pathDist+'/images'));
-    var buildJS = gulp.src(config.paths.js) // Переносим скрипты в продакшен
-        .pipe(gulp.dest( config.output.pathDist+'/js'));
-    var buildLibs = gulp.src(config.paths.libs) // Переносим скрипты в продакшен
-        .pipe(gulp.dest( config.output.pathDist+'/libs'));
-    var buildHtml = gulp.src(config.paths.html) // Переносим скрипты в продакшен
-        .pipe(gulp.dest( config.output.pathDist));
-
+    return gulp.src('dist')
+        .pipe(clean('dist'));
 });
 
-gulp.task('default',['watch']);
+gulp.task('buildCss', function () {
 
+    return gulp.src(config.paths.css)
+        .pipe(cleanCSS({compatibility: 'ie8'}))
+        .pipe(gulp.dest(config.output.pathDistCss));
+});
 
+gulp.task('buildFonts', function () {
+
+    return gulp.src('src/fonts/**/*') // Переносим шрифты в продакшен
+        .pipe(gulp.dest('dist/fonts'));
+});
+
+gulp.task('buildJs', function () {
+
+    return gulp.src('src/js/**/*')
+        .pipe(gulp.dest('dist/js'));
+});
+
+gulp.task('buildLibsJs', function () {
+
+    return gulp.src('src/libs/**/*')
+        .pipe(gulp.dest('dist/libs'));
+});
+
+gulp.task('buildHtml', function () {
+    return gulp.src('src/*.html') // Переносим HTML в продакшен
+        .pipe(gulp.dest('dist'));
+});
+
+gulp.task('buildImages', function () {
+    return gulp.src('src/images/**/*') // Переносим изображения в продакшен
+        .pipe(gulp.dest('dist/images'));
+});
+
+gulp.task('build', gulp.series('clean', 'sass', gulp.parallel('buildCss','buildFonts','buildJs','buildLibsJs','buildHtml','buildImages')));
+
+gulp.task('serve', function(done) {
+
+    browserSync.init({
+        server: 'src'
+    });
+
+    gulp.watch(config.paths.scss, gulp.series('sass'));
+    gulp.watch(config.paths.js).on('change', () => {
+        browserSync.reload();
+        done();
+    });
+    gulp.watch(config.paths.html).on('change', () => {
+        browserSync.reload();
+        done();
+    });
+
+    done();
+});
+
+gulp.task('default', gulp.series('sass', 'serve'));
